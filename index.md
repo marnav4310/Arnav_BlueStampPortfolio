@@ -30,11 +30,9 @@ For your second milestone, explain what you've worked on since your previous mil
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # First Milestone
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+My first milestone was completing my starter project: the Simon Says Machine. To build the machine, I had to solder the LEDs, power and sound switches, battery clips, decoupling caps, microcontroller, and alarm. My main difficulty was manipulating the solder so that the shape of it looks and clean and appealing. I fixed this by applying the solder first, and if I was unhappy with the shape, I remanipulated using just the soldering iron to remelt and reshape the solder. The machine puts out a series of colors, and the user's job is to copy exactly what the machine does like the game, Simon Says.
+
+![Headstone Image](Simon Says Project.jpg)
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
