@@ -1,4 +1,4 @@
-# Simon Says Machine
+# Hexapod
 The machine will put out a sequence of colors. The point of the machine is to copy exactly what the machine does. This project is helpful to get better at soldering, as every component of the project has to be soldered to the circuitboard.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
