@@ -47,6 +47,8 @@ My main difficulty was manipulating the solder so that the shape of it looks cle
 
 The machine works by emitting a series of colors and sounds, and the user's job is to copy exactly what the machine does like the game, Simon Says. Each of the four buttons has a unique color and sound to make it easier for the user and also more accessible for everyone. The game will keep adding onto the pattern until the user messes up the pattern, at which point, the machine will make a loud beeping sound and all four of the lights will go off.
 
+Here is the website for the Simon Says machine: https://www.sparkfun.com/products/10547
+
 ![Headstone Image](Simon Says Project.jpg)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Bm8i1o8ru9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
