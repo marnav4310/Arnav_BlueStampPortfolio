@@ -1,5 +1,5 @@
-# Hexapod and Simon Says Machine
-The machine will put out a sequence of colors. The point of the machine is to copy exactly what the machine does. This project is helpful to get better at soldering, as every component of the project has to be soldered to the circuitboard.
+# Hexapod
+**Need to put a description
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -41,7 +41,11 @@ For your first milestone, describe what your project is and how you plan to buil
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # Starter Project
-My starter project was building a Simon Says Machine. To build the machine, I had to solder the LEDs, power and sound switches, battery clips, decoupling caps, a microcontroller, and an alarm. My main difficulty was manipulating the solder so that the shape of it looks and clean and appealing. I fixed this by applying the solder first, and if I was unhappy with the shape, I remanipulated using just the soldering iron to remelt and reshape the solder. The machine emits a series of colors and sounds, and the user's job is to copy exactly what the machine does like the game, Simon Says. Each of the four buttons has a unique color and sound to make it easier for the user and also more accesible for everyone. The game will keep adding onto the pattern until the user messes up the pattern, at which point, the machine will make a loud beeping sound and all four of the lights will go off.
+My starter project was building a Simon Says Machine. To build the machine, I had to solder the LEDs, power and sound switches, battery clips, decoupling caps, a microcontroller, and an alarm. 
+
+My main difficulty was manipulating the solder so that the shape of it looks clean and appealing. I fixed this by applying the solder first, and if I was unhappy with the shape, I manipulated the solder using the soldering iron to remelt and reshape the solder. 
+
+The machine works by emitting a series of colors and sounds, and the user's job is to copy exactly what the machine does like the game, Simon Says. Each of the four buttons has a unique color and sound to make it easier for the user and also more accessible for everyone. The game will keep adding onto the pattern until the user messes up the pattern, at which point, the machine will make a loud beeping sound and all four of the lights will go off.
 
 ![Headstone Image](Simon Says Project.jpg)
 
