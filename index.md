@@ -5,7 +5,7 @@ A hexapod robot is a robot that walks on six legs, which allows it to have great
 |:--:|:--:|:--:|:--:|
 | Arnav M | Monta Vista High School | Mechanical Engineering | Incoming Senior
 
-![Headstone Image](Simon Says Project.jpg)
+![Headstone Image]()
   
 # Final Milestone
 For your final milestone, explain the outcome of your project. Key details to include are:
