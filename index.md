@@ -1,5 +1,6 @@
 # Hexapod
 A hexapod robot is a robot that walks on six legs, which allows it to have greater flexibility in its movement, like being able to walk on uneven terrain.
+
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Arnav M | Monta Vista High School | Mechanical Engineering | Incoming Senior
@@ -47,8 +48,6 @@ My main difficulty was manipulating the solder so that the shape of it looks cle
 The machine works by emitting a series of colors and sounds, and the user's job is to copy exactly what the machine does like the game, Simon Says. Each of the four buttons has a unique color and sound to make it easier for the user and also more accessible for everyone. The game will keep adding onto the pattern until the user messes up the pattern, at which point, the machine will make a loud beeping sound and all four of the lights will go off.
 
 ![Headstone Image](Simon Says Project.jpg)
-
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Bm8i1o8ru9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
