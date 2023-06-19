@@ -54,7 +54,7 @@ The Simon Says Machine can be found here: https://www.sparkfun.com/products/1054
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Bm8i1o8ru9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # Schematics 
-![Headstone Image](Simon Says Project.jpg)
+![Headstone Image](Hexapod Schematic.pdf)
 
 <!--# Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
