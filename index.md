@@ -74,7 +74,7 @@ void loop() {
 ```
 -->
 
-# Bill of Materials
+<!--# Bill of Materials
 | **Part** | **Description** | **Price** | **Link** |
 |:--:|:--:|:--:|:--|
 | SparkFun Simon Says Kit | To build the Simon Says Machine | $28.95 | <a href="https://www.sparkfun.com/products/10547"> Link </a> 
@@ -83,7 +83,7 @@ void loop() {
 | NIMH Battery | To power the Hexapod robot | $35.49 | <a href="https://power.tenergy.com/tenergy-nimh-7-2v-3000mah-battery-pack-w-tamiya-connector-for-rc-cars/"> Link </a> 
 | Tamiya Connectors | To connect the battery to the circuit board | $12.99 | <a href="https://www.amazon.com/JFtech-Connector-Silicone-Controller-Battery/dp/B07MKXPY8M"> Link </a> 
 | NiMH Battery Charger | To charge the battery | $14.99 | <a href="https://www.amazon.com/Charger-Battery-Standard-Connector-Charging/dp/B089218ZW9/ref=asc_df_B089218ZW9/?tag=hyprod-20&linkCode=df0&hvadid=459723993320&hvpos=&hvnetw=g&hvrand=14357015709352416414&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-950581374399&psc=1"> Link </a> 
-
+-->
 <!--# Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
