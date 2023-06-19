@@ -73,23 +73,14 @@ void loop() {
 ```
 -->
 # Bill of Materials
-Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
-
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | SparkFun Simon Says Kit | To build the Simon Says Machine | $28.95 | <a href="https://www.sparkfun.com/products/10547"> Link </a> |
-|:--:|:--:|:--:|:--:|
 | Wire Stripper	 | To strip wires | $4.99 | <a href="https://www.harborfreight.com/8-in-four-way-wire-crimperstripper-tool-63307.html?utm_source=google&utm_medium=cpc&utm_campaign=12169054043&campaignid=12169054043&utm_content=125548909588&adsetid=125548909588&product=63307&store=349&gclid=CjwKCAjw-b-kBhB-EiwA4fvKrFxIzJ2fiXIy7b-PWSSQ3eRjA45DKhbypWOqPFruQy-ZZR3AENTITBoCaegQAvD_BwE"> Link </a> |
-|:--:|:--:|:--:|:--:|
 | Hexapod Kit	 | To build the Hexapod robot | $129.95 | <a href="https://www.amazon.com/Freenove-Raspberry-Crawling-Detailed-Tutorial/dp/B07FLVZ2DN/ref=sr_1_3?crid=2V2K9QH3EJEBL&keywords=freenove%2Bhexapod%2Bkit&qid=1680885781&sprefix=freenove%2Bhexapod%2Bki%2Caps%2C194&sr=8-3&th=1"> Link </a> |
-|:--:|:--:|:--:|:--:|
-| NIMH Battery | To power the Hexapod robot | $129.95 | <a href="https://power.tenergy.com/tenergy-nimh-7-2v-3000mah-battery-pack-w-tamiya-connector-for-rc-cars/"> Link </a> |
-|:--:|:--:|:--:|:--:|
+| NIMH Battery | To power the Hexapod robot | $35.49 | <a href="https://power.tenergy.com/tenergy-nimh-7-2v-3000mah-battery-pack-w-tamiya-connector-for-rc-cars/"> Link </a> |
 | Tamiya Connectors | To connect the battery to the circuit board | $12.99 | <a href="https://www.amazon.com/JFtech-Connector-Silicone-Controller-Battery/dp/B07MKXPY8M"> Link </a> |
-|:--:|:--:|:--:|:--:|
 | NiMH Battery Charger | To charge the battery | $14.99 | <a href="https://www.amazon.com/Charger-Battery-Standard-Connector-Charging/dp/B089218ZW9/ref=asc_df_B089218ZW9/?tag=hyprod-20&linkCode=df0&hvadid=459723993320&hvpos=&hvnetw=g&hvrand=14357015709352416414&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-950581374399&psc=1"> Link </a> |
-|:--:|:--:|:--:|:--:|
 
 <!--# Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
