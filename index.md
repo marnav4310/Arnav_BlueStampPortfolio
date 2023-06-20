@@ -32,6 +32,8 @@ For your second milestone, explain what you've worked on since your previous mil
 # First Milestone
 My project is building a hexapod, a robot that has 6 legs and can walk on any terrain. In order to build it, I have to first build the individual parts of the hexapod, attach the legs, complete the wiring, and then lastly calibrate the robot. The individual parts of the hexapod include the base, the circuit board, the legs, and the battery. First, the circuit board is attached to the base, and the battery is connected to the circuit board. Lastly, each leg is attached to the base of the robot while the power is on so that the robot is calibrated properly. Each leg is made up of 3 servo motors, and 4 different acrylic parts, which I attached together using screws and disc servo arms.
 
+To set up the software, I had to install the Arduino and Processing IDEs. In the Arduino IDE, I had to install the FNHR, RF24, and FlexiTimer2 libraries. In the Processing IDE, I had to install the ControlP5 library. Then, in the Processing IDE, I had to open the Processing App, which opened the hexapod software, from which I can control, install, and calibrate the hexapod.
+
 So far, I have built the base and attached all of the legs to the base, while ensuring that the legs are positioned correctly when the power is on. 
 
 One issue that came up was that I attached all of the legs when the power was on, which caused the legs to be positioned incorrectly. Therefore, I had to disassemble the robot, connect the battery, turn on the power, and reinstall the legs.
