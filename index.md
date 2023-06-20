@@ -30,15 +30,15 @@ For your second milestone, explain what you've worked on since your previous mil
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 --->
 # First Milestone
-My project is building a hexapod, a robot that has 6 legs and can walk on all terrains. In order to build it, I have to first, build the individual parts of the hexapod, attach the legs, complete the wiring, and then lastly calibrate the robot. The individual parts of the hexapod include the base, the circuit board, the legs, and the battery. First, the circuit board is attached to the base, and the battery is connected to the circuit board. Lastly, each leg is attached to the base of the robot while the power is on so that the robot is calibrated properly. Each leg is made up of 3 servo motors, and 4 different acrylic parts, which I attached together using screws and disc servo arms.
+My project is building a hexapod, a robot that has 6 legs and can walk on any terrain. In order to build it, I have to first build the individual parts of the hexapod, attach the legs, complete the wiring, and then lastly calibrate the robot. The individual parts of the hexapod include the base, the circuit board, the legs, and the battery. First, the circuit board is attached to the base, and the battery is connected to the circuit board. Lastly, each leg is attached to the base of the robot while the power is on so that the robot is calibrated properly. Each leg is made up of 3 servo motors, and 4 different acrylic parts, which I attached together using screws and disc servo arms.
 
 So far, I have built the base and attached all of the legs to the base, while ensuring that the legs are positioned correctly when the power is on. 
 
-The biggest struggle was that I attached all of the legs when the power was on, which caused the legs to be positioned incorrectly. Therefore, I had to disassemble the robot, connect the battery, turn on the power, and reinstall the legs.
+One issue that came up was that I attached all of the legs when the power was on, which caused the legs to be positioned incorrectly. Therefore, I had to disassemble the robot, connect the battery, turn on the power, and reinstall the legs.
+
+Another issue that came up was one of my battery contacts coming loose after I fully assembled my robot. I had to replace the circuit board, and basically, I had to rebuild the robot again from scratch.
 
 My next steps are to clean up the wiring of the robot by reconnecting all of the servo motors to their correct ports, and by using cable tidy to arrange all of the wires of the servo motors. Finally, I have to calibrate the robot so that its default position is how I want it.
-
-**Need to put in the video link
 
 # Starter Project
 My starter project was building a Simon Says Machine. To build the machine, I had to solder the LEDs, power and sound switches, battery clips, decoupling caps, a microcontroller, and an alarm. 
