@@ -45,6 +45,8 @@ The last issue that I faced was having broken servo motors, since the only way t
 My next steps are to calibrate the robot so that its default position is how I want it, then I should be able to control the robot as I want, using my laptop. Then, I need to connect the remote control and install the app on my phone, so that I can control the hexapod with the remote or with my phone.
 
 # Starter Project
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Bm8i1o8ru9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 My starter project was building a Simon Says Machine. To build the machine, I had to solder the LEDs, power and sound switches, battery clips, decoupling caps, a microcontroller, and an alarm. 
 
 My main difficulty was manipulating the solder so that the shape of it looks clean and appealing. I fixed this by applying the solder first, and if I was unhappy with the shape, I manipulated the solder using the soldering iron to remelt and reshape the solder. 
@@ -54,8 +56,6 @@ The machine works by emitting a series of colors and sounds, and the user's job 
 The Simon Says Machine can be found here: https://www.sparkfun.com/products/10547
 
 ![Headstone Image](Simon Says Project.jpg)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Bm8i1o8ru9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # Schematics 
 ![Headstone Image](Hexapod Schematic-1.jpg)
