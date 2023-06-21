@@ -27,7 +27,7 @@ Then, I moved on to controlling the robot through Wi-Fi using the WLAN module. H
 
 After I finished calibrating the robot again, I attached the correct WLAN module to its correct port on the circuit board. This created a hotspot, which I connected my laptop to. From then on, I was able to control the robot through the control tab on the Processing app.
 
-One issue I faced at the end was the robot momentarily disconnecting from its hotspot. This is just because the hotspot is not as reliable as the Wi-Fi, but is irrelevant, as the robot will connect back to the hotspot by itself. 
+One issue I faced at the end was the robot momentarily disconnecting from its hotspot. This is just because the hotspot is not as reliable as the Wi-Fi, but is irrelevant, as the robot connects back to the hotspot by itself. 
 
 So far, building the hexapod has been the most challenging part of this project. Reaching my first milestone took me close to a week, but to reach my second milestone, it only took me one day. Overall, this project is much heavier on the mechanical engineering side, rather than the electrical engineering or computer science side.
 
