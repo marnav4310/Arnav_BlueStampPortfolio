@@ -17,18 +17,22 @@ For your final milestone, explain the outcome of your project. Key details to in
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+-->
 # Second Milestone
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone
+For my second milestone, the first thing I did was attach the other baseplate to the other side of the robot so that the circuit board is protected from any harm, and so the robot looks better. 
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+The next thing I did was calibrate the robot. I did this by using the calibration tab in the Processing app. Using the calibration sheet provided, I had to move each leg in three dimensions so that the robot lined up with the diagram on the calibration sheet. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
---->
+Then, I moved on to controlling the robot through Wi-Fi using the WLAN module. However, I mistook the remote control module for the WLAN module, which caused the circuit board to heat up, so I immediately turned off the power and removed the battery. However, I didn't realize that this caused the calibration to reset. From that, I learned that I have to leave the battery connected at all times, otherwise, the calibration will reset. I recalibrated the robot, using the calibration sheet again. 
+
+After I finished calibrating the robot again, I attached the correct WLAN module to its correct port on the circuit board. This created a hotspot, which I connected my laptop to. From then on, I was able to control the robot through the control tab on the Processing app.
+
+One issue I faced at the end was the robot momentarily disconnecting from its hotspot. This is just because the hotspot is not as reliable as the Wi-Fi, but is irrelevant, as the robot will connect back to the hotspot by itself. 
+
+So far, building the hexapod has been the most challenging part of this project. Reaching my first milestone took me close to a week, but to reach my second milestone, it only took me one day. Overall, this project is much heavier on the mechanical engineering side, rather than the electrical engineering or computer science side.
+
+My next step is going to be controlling the robot through the remote controller and through my phone using the Freenove app. After that, my first modification is to build a container to hold the battery, so that it is not sitting loose on top of the robot. 
+
 # First Milestone
 My intensive project is a hexapod, a robot that has 6 legs and can walk on any terrain. In order to build it, I have to first build the individual parts of the hexapod, attach the legs, complete the wiring, and then lastly calibrate the robot. The individual parts of the hexapod include the base, the circuit board, the legs, and the battery. First, the circuit board is attached to the base, and the battery is connected to the circuit board. Lastly, each leg is attached to the base of the robot while the power is on so that the robot is calibrated properly. Each leg is made up of 3 servo motors, and 4 different acrylic parts, which I attached together using screws and disc servo arms.
 
