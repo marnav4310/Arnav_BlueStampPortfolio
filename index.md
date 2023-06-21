@@ -36,13 +36,13 @@ To set up the software, I had to install the Arduino and Processing IDEs. In the
 
 So far, I have built the base and attached all of the legs to the base, while ensuring that the legs are positioned correctly when the power is on. 
 
-One issue that came up was that I attached all of the legs when the power was on, which caused the legs to be positioned incorrectly. Therefore, I had to disassemble the robot, connect the battery, turn on the power, and reinstall the legs.
+One issue that came up was that I attached all of the legs when the battery was disconnected, which caused the legs to be positioned incorrectly. Therefore, I had to disassemble the robot, connect the battery, turn on the power, and reinstall the legs.
 
 Another issue that came up was one of my battery contacts coming loose after I fully assembled my robot. I had to replace the circuit board, and basically, I had to rebuild the robot again from scratch.
 
 The last issue that I faced was having broken servo motors, since the only way to check that, would be after it was assembled. If I found out that a motor was broken, I had to disassemble the leg, replace the servo motor, and reattach the leg. I had one motor that was spazzing out, one with a screw stuck in the outer shaft, and two with disconnected wires, so I had to replace all 4 of them.
 
-My next steps are to clean up the wiring of the robot by reconnecting all of the servo motors to their correct ports, and by using cable tidy to arrange all of the wires of the servo motors. Finally, I have to calibrate the robot so that its default position is how I want it, then I should be able to control the robot as I want, using my laptop, and I can work on modifications.
+My next steps are to calibrate the robot so that its default position is how I want it, then I should be able to control the robot as I want, using my laptop. Then, I need to connect the remote control and install the app on my phone, so that I can control the hexapod with the remote or with my phone.
 
 # Starter Project
 My starter project was building a Simon Says Machine. To build the machine, I had to solder the LEDs, power and sound switches, battery clips, decoupling caps, a microcontroller, and an alarm. 
