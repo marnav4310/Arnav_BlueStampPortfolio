@@ -8,6 +8,10 @@ A hexapod robot is a robot that walks on six legs, which allows it to have great
 <!--<![Headstone Image]()>
   
 # Final Milestone
+For my last milestone, I was able to control the hexapod with my phone through the Freenove App, and with the remote control, which uses two wireless modules, which attach to both the robot's circuit board and the remote's circuit board. 
+
+One of the issues that I faced since my last milestone was with the phone control. I would be able to connect the robot to the app, through the WLAN module, which basically creates a hotspot for my phone to connect to. However, when the robot was connected, the voltage would remain at zero volts. I knew the issue wasn't with the WLAN module, as I was able to control the robot using the WLAN module through my laptop.
+
 For your final milestone, explain the outcome of your project. Key details to include are:
 - What you've accomplished since your previous milestone
 - What your biggest challenges and triumphs were at BSE
