@@ -19,7 +19,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 -->
 # Second Milestone
-For my second milestone, the first thing I did was attach the other baseplate to the other side of the robot so that the circuit board is protected from any harm, and so the robot looks better. 
+For my second milestone, the first thing I did was attach the other baseplate using M3 standoffs to the other side of the robot so that the circuit board is protected from any harm, and so the robot looks better. I used M3 standoffs instead of M3 screws so that I can attach screw a piece of wood into the standoffs, to which I can strap my battery to. 
 
 The next thing I did was calibrate the robot. I did this by using the calibration tab in the Processing app. Using the calibration sheet provided, I had to move each leg in three dimensions so that the robot lined up with the diagram on the calibration sheet. 
 
