@@ -31,7 +31,7 @@ One issue I faced at the end was the robot momentarily disconnecting from its ho
 
 So far, building the hexapod has been the most challenging part of this project. Reaching my first milestone took me close to a week, but to reach my second milestone, it only took me one day. Overall, this project is much heavier on the mechanical engineering side, rather than the electrical engineering or computer science side.
 
-My next step is going to be controlling the robot through the remote controller and through my phone using the Freenove app. After that, my first modification is to build a container to hold the battery, so that it is not sitting loose on top of the robot. 
+My next step is going to be controlling the robot through the remote controller and through my phone using the Freenove app. After that, my first modification is to build something to hold the battery, so that it is not sitting loose on top of the robot. 
 
 # First Milestone
 My intensive project is a hexapod, a robot that has 6 legs and can walk on any terrain. In order to build it, I have to first build the individual parts of the hexapod, attach the legs, complete the wiring, and then lastly calibrate the robot. The individual parts of the hexapod include the base, the circuit board, the legs, and the battery. First, the circuit board is attached to the base, and the battery is connected to the circuit board. Lastly, each leg is attached to the base of the robot while the power is on so that the robot is calibrated properly. Each leg is made up of 3 servo motors, and 4 different acrylic parts, which I attached together using screws and disc servo arms.
