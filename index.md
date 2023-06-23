@@ -1,6 +1,5 @@
 # Hexapod
-A hexapod robot is a robot that walks on six legs, which allows it to have greater flexibility in its movement, like being able to walk on uneven terrain.
-
+A hexapod robot is a robot that walks on six legs, which allows it to have greater flexibility in its movement than wheel robots, like being able to walk on uneven terrain or climb up on elevation. Since the robot has so many legs, it still functions normally even if one of the legs is damaged. The hexapod can also climb vertically if it has a mechanism that allows it to stick to walls like suction cups.
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Arnav M | Monta Vista High School | Mechanical Engineering | Incoming Senior
