@@ -8,9 +8,11 @@ A hexapod robot is a robot that walks on six legs, which allows it to have great
 <!--<![Headstone Image]()>
   
 # Final Milestone
-For my last milestone, I was able to control the hexapod with my phone through the Freenove App, and with the remote control, which uses two wireless modules, which attach to both the robot's circuit board and the remote's circuit board. 
+For my last milestone, I was able to make the hexapod complete a series of motions like a little dance or waving one leg. Also, I added a base to which I can strap the battery so that the battery is not hanging loose and is securely attached to the robot.
 
-One of the issues that I faced since my last milestone was with the phone control. I would be able to connect the robot to the app, through the WLAN module, which basically creates a hotspot for my phone to connect to. However, when the robot was connected, the voltage would remain at zero volts. I knew the issue wasn't with the WLAN module, as I was able to control the robot using the WLAN module through my laptop.
+One of the issues I faced was coding in Arduino since Arduino uses a variant of C++, and I've never used C++ before. However, C++ and Java are pretty similar, so I was able to learn C++ pretty quickly.
+
+Another issue I faced was finding the exact values that I had to assign for each motion. Since the series of motions is very complex, and I have to specify the value for each of the legs in each motion, I had to assign a lot of values to get the motions exactly how I wanted them.
 
 For your final milestone, explain the outcome of your project. Key details to include are:
 - What you've accomplished since your previous milestone
