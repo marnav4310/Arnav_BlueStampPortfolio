@@ -76,7 +76,7 @@ The Simon Says Machine can be found here: https://www.sparkfun.com/products/1054
 ![Headstone Image](Hexapod Schematic-2.jpg)
 
 # Code 
-
+This code is run in the Processing IDE in C++. When run, the Processing App comes up from which you can install, calibrate, and control the hexapod.
 ```c++
 // control robot
 ControlRobot controlRobot = new ControlRobot(this);
@@ -885,7 +885,8 @@ public void processEvent(int id) {
   }
 }
 ```
-
+<!--This code is written in the Arduino IDE. When the code is uploaded to the hexapod, the hexapod will do the Cupid Shuffle dance, which you can sync up with the actual song.
+-->
 # Bill of Materials
 
 | **Part** | **Description** | **Price** | **Link** |
