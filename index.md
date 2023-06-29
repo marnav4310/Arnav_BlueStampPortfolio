@@ -18,7 +18,7 @@ The last big issue I had was with broken motors. After I finished coding the Cup
 
 Some of the key topics I learned about was using for loops. Since the Cupid Shuffle dance is a very repetitive dance, I either have to write out the same code over and over. However, with for loops, I was able to repeat the same motions as many times as I wanted, which in this case was first 5 times then 7 times. 
 
-For my next steps for this project, I am going to attach an Arduino speaker, so that I can actually play the music from the robot, instead of my laptop. In this way, the music will automatically be synced.
+For my next steps for this project, I am going to attach an Arduino speaker, so that I can actually play the music from the robot, instead of my laptop. In this way, the music will automatically be synced. To do this, I need to solder male-to-male jumper wires onto the Arduino speaker, and then attach the other ends to the circuit board to the ground and any Digital I/O terminal.
 
 # Second Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/S1s-05LBY-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
