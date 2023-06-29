@@ -6,24 +6,20 @@ A hexapod robot is a robot that walks on six legs, which allows it to have great
 | Arnav M | Monta Vista High School | Mechanical Engineering | Incoming Senior
 
 <!--<![Headstone Image]()>
-  
+  -->
 # Final Milestone
-For my last milestone, I was able to make the hexapod complete a series of motions like a little dance or waving one leg. Also, I added a base to which I can strap the battery so that the battery is not hanging loose and is securely attached to the robot.
+For my final milestone, I was able to make the hexapod complete a series of motions like a little dance or waving one leg, but the main one I was focusing on was the Cupid Shuffle Dance. To make the hexapod do the Cupid Shuffle, I had to code every single motion, like moving to the right or raising one leg. One of the issues I faced was coding in Arduino since Arduino uses a variant of C++, and I've never used C++ before. However, C++ and Java are pretty similar, so I was able to learn C++ pretty quickly. Another issue I faced was finding the exact values that I had to assign for each motion. Since the series of motions is very complex, and I have to specify the value for each of the legs in each motion, I had to assign a lot of values to get the motions exactly how I wanted them.
 
-One of the issues I faced was coding in Arduino since Arduino uses a variant of C++, and I've never used C++ before. However, C++ and Java are pretty similar, so I was able to learn C++ pretty quickly.
+I also had a bit of a hard time coding the motions of the robot so that it would be synced to the music because a slight value error in the code, could cause the rest of the dance to not be synced.
 
-Another issue I faced was finding the exact values that I had to assign for each motion. Since the series of motions is very complex, and I have to specify the value for each of the legs in each motion, I had to assign a lot of values to get the motions exactly how I wanted them.
+For this milestone, I also added another baseboard and Velcro straps with which I can strap the battery so that the battery is not hanging loose and is securely attached to the robot. One issue I faced with the Velcro was how sticky the adhesive was because it made the Velcro very hard to work with. I ended up not removing the plastic covering the adhesive so that I didn't have to work with the sticky part. I also had a hard time finding the right standoffs to attach the baseboard. Since the extra baseboard was not part of the kit, I had to find my own standoffs, but I ended up just using M3 standoffs again.
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+The last big issue I had was with broken motors. After I finished coding the Cupid Shuffle dance, I came back the next day, and a couple of the servo motors stopped working overnight. To fix it, I had to replace the motors by disassembling two of the baseboards, replacing the motor, then recalibrating the robot, and then re-uploading the code for the Cupid Shuffle.
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+Some of the key topics I learned about was using for loops. Since the Cupid Shuffle dance is a very repetitive dance, I either have to write out the same code over and over. However, with for loops, I was able to repeat the same motions as many times as I wanted, which in this case was first 5 times then 7 times. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
--->
+For my next steps for this project, I am going to attach an Arduino speaker, so that I can actually play the music from the robot, instead of my laptop. In this way, the music will automatically be synced.
+
 # Second Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/S1s-05LBY-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
