@@ -881,8 +881,313 @@ public void processEvent(int id) {
   }
 }
 ```
-<!--This code is written in the Arduino IDE. When the code is uploaded to the hexapod, the hexapod will do the Cupid Shuffle dance, which you can sync up with the actual song.
--->
+This code is written in the Arduino IDE. When the code is uploaded to the hexapod, the hexapod will do the Cupid Shuffle dance, which is synced up with the actual song.
+
+```c++
+#ifndef ARDUINO_AVR_MEGA2560
+#error Wrong board. Please choose "Arduino/Genuino Mega or Mega 2560"
+#endif
+
+// Include FNHR (Freenove Hexapod Robot) library
+#include <FNHR.h>
+
+FNHR robot;
+
+void setup() {
+  // Custom setup code start
+
+  // Custom setup code end
+  // Start Freenove Hexapod Robot
+  robot.Start();
+}
+
+void loop() {
+  // Custom loop code start
+ delay (2500);
+ 
+ for (int i = 0; i <= 1; i++)
+ {
+  robot.MoveBody(0, 30, 0);
+  robot.MoveBody(0, -30, 0);
+  robot.MoveBody(30, 0, 0);
+  robot.MoveBody(-30, 0, 0);
+  robot.MoveBody(0, 0, -45);
+  robot.MoveBody(0, 0, 45);
+ }
+
+for (int i = 0; i <= 1; i++)
+ {
+  robot.RotateBody(15, 0, 0);
+  robot.RotateBody(0, 15, 0);
+  robot.RotateBody(-15, 0, 0);
+  robot.RotateBody(0, -15, 0);
+  robot.RotateBody(0, 0, 0);
+  robot.RotateBody(0, 0, 15);
+ }
+
+ for (int i = 0; i <= 1; i++)
+ {
+  robot.RotateBody(0, 0, 0);
+  robot.RotateBody(0, 0, 15);
+  robot.RotateBody(0, 0, -15);
+  robot.RotateBody(0, 0, 0); 
+  robot.MoveBody(0, 30, 0);
+  robot.MoveBody(0, -30, 0);
+ }
+for (int i = 0; i <= 1; i++)
+{
+ robot.RotateBody(0, 0, -15);
+ robot.RotateBody(0, 0, 0); 
+ robot.MoveBody(0, 30, 0);
+ robot.MoveBody(0, -30, 0);
+ robot.MoveBody(0, 30, 0);
+ robot.MoveBody(0, 30, 0);
+}
+for (int i = 0; i <= 2; i++)
+{
+ robot.MoveBody(0, 30, 0);
+ robot.MoveBody(-30, 0, 0);
+ robot.MoveBody(0, -30, 0);
+ robot.MoveBody(30, 0, 0);
+ robot.MoveBody(0, 0, 0);
+ robot.MoveBody(0, 0, 45);
+}
+
+robot.MoveBody(0, 0, -45);
+robot.MoveBody(0, 0, 45);
+
+delay (1000);
+ 
+ for (int i = 0; i <= 1; i++) 
+ {
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+
+  delay (150);
+
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+ 
+  
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  }
+
+for (int i = 0; i <= 2; i++) 
+ {
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+ 
+  
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  }
+  robot.SleepMode();
+  robot.MoveBody(0, 30, 0);
+  robot.MoveBody(-30, 0, 0);
+  robot.MoveBody(0, -30, 0);
+  robot.MoveBody(30, 0, 0);
+  robot.MoveBody(0, 0, 0);
+  robot.MoveBody(0, 0, 45);
+  robot.MoveBody(0, 0, 0);
+  robot.RotateBody(15, 0, 0);
+  robot.RotateBody(0, 15, 0);
+  robot.RotateBody(-15, 0, 0);
+  robot.RotateBody(0, -15, 0);
+  robot.RotateBody(0, 0, 0);
+  robot.RotateBody(0, 0, 15);
+  robot.RotateBody(0, 0, -15);
+  robot.RotateBody(0, 0, 0); 
+  robot.MoveBody(0, 30, 0);
+  robot.MoveBody(0, -30, 0);
+  robot.MoveBody(0, 30, 0);
+  robot.MoveBody(0, 30, 0);
+  
+  for (int i = 0; i <= 6; i++) 
+ {
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  }
+ 
+  
+  robot.SleepMode();
+ 
+  while (true);
+  // Custom loop code end
+}
+```
+
 # Bill of Materials
 
 | **Part** | **Description** | **Price** | **Link** |
