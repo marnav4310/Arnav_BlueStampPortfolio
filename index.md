@@ -8,9 +8,11 @@ A hexapod robot is a robot that walks on six legs, which allows it to have great
 <!--<![Headstone Image]()>
   -->
 # Final Milestone
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K-nR3v7Td8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 For my final milestone, I was able to make the hexapod complete a series of motions like a little dance or waving one leg, but the main one I was focusing on was the Cupid Shuffle Dance. To make the hexapod do the Cupid Shuffle, I had to code every single motion, like moving to the right or raising one leg. One of the issues I faced was coding in Arduino since Arduino uses a variant of C++, and I've never used C++ before. However, C++ and Java are pretty similar, so I was able to learn C++ pretty quickly. Another issue I faced was finding the exact values that I had to assign for each motion. Since the series of motions is very complex, and I have to specify the value for each of the legs in each motion, I had to assign a lot of values to get the motions exactly how I wanted them.
 
-I also had a bit of a hard time coding the motions of the robot so that it would be synced to the music because a slight value error in the code, could cause the rest of the dance to not be synced.
+I also had a bit of a hard time coding the motions of the robot so that it would be synced to the music because a slight value error in the code could cause the rest of the dance to not be synced.
 
 For this milestone, I also added another baseboard and Velcro straps with which I can strap the battery so that the battery is not hanging loose and is securely attached to the robot. One issue I faced with the Velcro was how sticky the adhesive was because it made the Velcro very hard to work with. I ended up not removing the plastic covering the adhesive so that I didn't have to work with the sticky part. I also had a hard time finding the right standoffs to attach the baseboard. Since the extra baseboard was not part of the kit, I had to find my own standoffs, but I ended up just using M3 standoffs again.
 
