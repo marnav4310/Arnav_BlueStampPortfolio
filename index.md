@@ -74,7 +74,410 @@ The Simon Says Machine can be found here: https://www.sparkfun.com/products/1054
 ![Headstone Image](Hexapod Schematic-2.jpg)
 
 # Code 
-This code is run in the Processing IDE in C++. When run, the Processing App comes up from which you can install, calibrate, and control the hexapod.
+I wrote this code in the Arduino IDE. When the code is uploaded to the hexapod, the hexapod will do the Cupid Shuffle dance, which is synced up with the actual song.
+
+```c++
+#ifndef ARDUINO_AVR_MEGA2560
+#error Wrong board. Please choose "Arduino/Genuino Mega or Mega 2560"
+#endif
+
+// Include FNHR (Freenove Hexapod Robot) library
+#include <FNHR.h>
+
+FNHR robot;
+
+void setup() {
+  // Custom setup code start
+
+  // Custom setup code end
+  // Start Freenove Hexapod Robot
+  robot.Start();
+}
+
+void loop() {
+  // Custom loop code start
+ delay (2500);
+ 
+ for (int i = 0; i <= 1; i++)
+ {
+  robot.MoveBody(0, 30, 0);
+  robot.MoveBody(0, -30, 0);
+  robot.MoveBody(30, 0, 0);
+  robot.MoveBody(-30, 0, 0);
+  robot.MoveBody(0, 0, -45);
+  robot.MoveBody(0, 0, 45);
+ }
+
+for (int i = 0; i <= 1; i++)
+ {
+  robot.RotateBody(15, 0, 0);
+  robot.RotateBody(0, 15, 0);
+  robot.RotateBody(-15, 0, 0);
+  robot.RotateBody(0, -15, 0);
+  robot.RotateBody(0, 0, 0);
+  robot.RotateBody(0, 0, 15);
+ }
+
+ for (int i = 0; i <= 1; i++)
+ {
+  robot.RotateBody(0, 0, 0);
+  robot.RotateBody(0, 0, 15);
+  robot.RotateBody(0, 0, -15);
+  robot.RotateBody(0, 0, 0); 
+  robot.MoveBody(0, 30, 0);
+  robot.MoveBody(0, -30, 0);
+ }
+for (int i = 0; i <= 1; i++)
+{
+ robot.RotateBody(0, 0, -15);
+ robot.RotateBody(0, 0, 0); 
+ robot.MoveBody(0, 30, 0);
+ robot.MoveBody(0, -30, 0);
+ robot.MoveBody(0, 30, 0);
+ robot.MoveBody(0, 30, 0);
+}
+for (int i = 0; i <= 2; i++)
+{
+ robot.MoveBody(0, 30, 0);
+ robot.MoveBody(-30, 0, 0);
+ robot.MoveBody(0, -30, 0);
+ robot.MoveBody(30, 0, 0);
+ robot.MoveBody(0, 0, 0);
+ robot.MoveBody(0, 0, 45);
+}
+
+robot.MoveBody(0, 0, -45);
+robot.MoveBody(0, 0, 45);
+
+delay (1000);
+ 
+ for (int i = 0; i <= 1; i++) 
+ {
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+
+  delay (150);
+
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+ 
+  
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  }
+
+for (int i = 0; i <= 2; i++) 
+ {
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+ 
+  
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  }
+  robot.SleepMode();
+  robot.MoveBody(0, 30, 0);
+  robot.MoveBody(-30, 0, 0);
+  robot.MoveBody(0, -30, 0);
+  robot.MoveBody(30, 0, 0);
+  robot.MoveBody(0, 0, 0);
+  robot.MoveBody(0, 0, 45);
+  robot.MoveBody(0, 0, 0);
+  robot.RotateBody(15, 0, 0);
+  robot.RotateBody(0, 15, 0);
+  robot.RotateBody(-15, 0, 0);
+  robot.RotateBody(0, -15, 0);
+  robot.RotateBody(0, 0, 0);
+  robot.RotateBody(0, 0, 15);
+  robot.RotateBody(0, 0, -15);
+  robot.RotateBody(0, 0, 0); 
+  robot.MoveBody(0, 30, 0);
+  robot.MoveBody(0, -30, 0);
+  robot.MoveBody(0, 30, 0);
+  robot.MoveBody(0, 30, 0);
+  
+  for (int i = 0; i <= 6; i++) 
+ {
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+  robot.CrawlRight();
+
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  robot.CrawlLeft();
+  
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.LegMoveToRelatively(1, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(1, -10, -60, -50);
+
+  robot.LegMoveToRelatively(4, 10, 60, 50);
+  delay(438);
+  robot.LegMoveToRelatively(4, -10, -60, -50);
+
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  robot.TurnLeft();
+  }
+ 
+  
+  robot.SleepMode();
+ 
+  while (true);
+  // Custom loop code end
+}
+```
+I wrote this code in the Arduino IDE. When uploaded to the hexapod, it will detect obstacles on its path, and will find the most optimal way to avoid the obstacle. The code uses an ultrasonic sensor.
+```c++
+#ifndef ARDUINO_AVR_MEGA2560
+#error Wrong board. Please choose "Arduino/Genuino Mega or Mega 2560"
+#endif
+
+// Include FNHR (Freenove Hexapod Robot) library
+#include <FNHR.h>
+
+FNHR robot;
+
+
+
+int trigPin = 3;      // trig pin of HC-SR04
+int echoPin = 2;     // Echo pin of HC-SR04
+
+float duration, distance, distanceLeft, durationLeft, distanceRight, durationRight;
+
+void setup() {
+  robot.Start();
+  pinMode(trigPin, OUTPUT);         // set trig pin as output
+  pinMode(echoPin, INPUT);          //set echo pin as input to capture reflected waves
+}
+
+void loop() {
+  // Write a pulse to the HC-SR04 Trigger Pin
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);     // send waves for 10 us
+  delayMicroseconds(10);
+  duration = pulseIn(echoPin, HIGH); // receive reflected waves
+  distance = duration / 58.2;   // convert to distance
+  delay(10);
+
+    if (distance <= 100)
+  {
+    robot.CrawlBackward();
+  }
+  
+  else
+  {
+      for (int i = 0; i <= 10; i++)
+      {
+        robot.TurnLeft();
+      }
+      digitalWrite(trigPin, LOW);
+      delayMicroseconds(2);
+      digitalWrite(trigPin, HIGH);     // send waves for 10 us
+      delayMicroseconds(10);
+      durationLeft = pulseIn(echoPin, HIGH); // receive reflected waves
+      distanceLeft = durationLeft / 58.2;   // convert to distance
+      delay(10);
+      for (int i = 0; i <= 20; i++)
+      {
+        robot.TurnRight();
+      }
+      digitalWrite(trigPin, LOW);
+      delayMicroseconds(2);
+      digitalWrite(trigPin, HIGH);     // send waves for 10 us
+      delayMicroseconds(10);
+      durationRight = pulseIn(echoPin, HIGH); // receive reflected waves
+      distanceRight = durationRight / 58.2;   // convert to distance
+      delay(10);
+      if (distanceLeft < distanceRight)
+      {
+        for (int i = 1; i <= 7 ; i++)
+        {
+        robot.TurnLeft();
+        }
+        for (int i = 1; i <= 15; i++)
+        {
+          robot.CrawlLeft();
+        }
+        for (int i = 1; i <= 15; i++)
+        {
+          robot.CrawlBackward();
+        }
+      }
+      if (distanceRight < distanceLeft)
+      {
+        for (int i = 1; i <= 7; i++)
+        {
+        robot.TurnLeft();
+        }
+        for (int i = 1; i <= 15; i++)
+        {
+          robot.CrawlRight();
+        }
+        for (int i = 1; i <= 15; i++)
+        {
+          robot.CrawlBackward();
+        }
+      }
+  }
+}
+```
+   
+This code is run in the Processing IDE in C++. When run, the Processing App comes up from which you can install, calibrate, and control the hexapod. I did not write the code for the Processing App.
 ```c++
 // control robot
 ControlRobot controlRobot = new ControlRobot(this);
@@ -881,312 +1284,6 @@ public void processEvent(int id) {
     cp5.getController("confirm").setColorLabel(160);
     break;
   }
-}
-```
-This code is written in the Arduino IDE. When the code is uploaded to the hexapod, the hexapod will do the Cupid Shuffle dance, which is synced up with the actual song.
-
-```c++
-#ifndef ARDUINO_AVR_MEGA2560
-#error Wrong board. Please choose "Arduino/Genuino Mega or Mega 2560"
-#endif
-
-// Include FNHR (Freenove Hexapod Robot) library
-#include <FNHR.h>
-
-FNHR robot;
-
-void setup() {
-  // Custom setup code start
-
-  // Custom setup code end
-  // Start Freenove Hexapod Robot
-  robot.Start();
-}
-
-void loop() {
-  // Custom loop code start
- delay (2500);
- 
- for (int i = 0; i <= 1; i++)
- {
-  robot.MoveBody(0, 30, 0);
-  robot.MoveBody(0, -30, 0);
-  robot.MoveBody(30, 0, 0);
-  robot.MoveBody(-30, 0, 0);
-  robot.MoveBody(0, 0, -45);
-  robot.MoveBody(0, 0, 45);
- }
-
-for (int i = 0; i <= 1; i++)
- {
-  robot.RotateBody(15, 0, 0);
-  robot.RotateBody(0, 15, 0);
-  robot.RotateBody(-15, 0, 0);
-  robot.RotateBody(0, -15, 0);
-  robot.RotateBody(0, 0, 0);
-  robot.RotateBody(0, 0, 15);
- }
-
- for (int i = 0; i <= 1; i++)
- {
-  robot.RotateBody(0, 0, 0);
-  robot.RotateBody(0, 0, 15);
-  robot.RotateBody(0, 0, -15);
-  robot.RotateBody(0, 0, 0); 
-  robot.MoveBody(0, 30, 0);
-  robot.MoveBody(0, -30, 0);
- }
-for (int i = 0; i <= 1; i++)
-{
- robot.RotateBody(0, 0, -15);
- robot.RotateBody(0, 0, 0); 
- robot.MoveBody(0, 30, 0);
- robot.MoveBody(0, -30, 0);
- robot.MoveBody(0, 30, 0);
- robot.MoveBody(0, 30, 0);
-}
-for (int i = 0; i <= 2; i++)
-{
- robot.MoveBody(0, 30, 0);
- robot.MoveBody(-30, 0, 0);
- robot.MoveBody(0, -30, 0);
- robot.MoveBody(30, 0, 0);
- robot.MoveBody(0, 0, 0);
- robot.MoveBody(0, 0, 45);
-}
-
-robot.MoveBody(0, 0, -45);
-robot.MoveBody(0, 0, 45);
-
-delay (1000);
- 
- for (int i = 0; i <= 1; i++) 
- {
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-
-  delay (150);
-
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
- 
-  
-  robot.LegMoveToRelatively(1, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(1, -10, -60, -50);
-
-  robot.LegMoveToRelatively(4, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(4, -10, -60, -50);
-
-  robot.LegMoveToRelatively(1, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(1, -10, -60, -50);
-
-  robot.LegMoveToRelatively(4, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(4, -10, -60, -50);
-
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  }
-
-for (int i = 0; i <= 2; i++) 
- {
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
- 
-  
-  robot.LegMoveToRelatively(1, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(1, -10, -60, -50);
-
-  robot.LegMoveToRelatively(4, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(4, -10, -60, -50);
-
-  robot.LegMoveToRelatively(1, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(1, -10, -60, -50);
-
-  robot.LegMoveToRelatively(4, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(4, -10, -60, -50);
-
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  }
-  robot.SleepMode();
-  robot.MoveBody(0, 30, 0);
-  robot.MoveBody(-30, 0, 0);
-  robot.MoveBody(0, -30, 0);
-  robot.MoveBody(30, 0, 0);
-  robot.MoveBody(0, 0, 0);
-  robot.MoveBody(0, 0, 45);
-  robot.MoveBody(0, 0, 0);
-  robot.RotateBody(15, 0, 0);
-  robot.RotateBody(0, 15, 0);
-  robot.RotateBody(-15, 0, 0);
-  robot.RotateBody(0, -15, 0);
-  robot.RotateBody(0, 0, 0);
-  robot.RotateBody(0, 0, 15);
-  robot.RotateBody(0, 0, -15);
-  robot.RotateBody(0, 0, 0); 
-  robot.MoveBody(0, 30, 0);
-  robot.MoveBody(0, -30, 0);
-  robot.MoveBody(0, 30, 0);
-  robot.MoveBody(0, 30, 0);
-  
-  for (int i = 0; i <= 6; i++) 
- {
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-  robot.CrawlRight();
-
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  robot.CrawlLeft();
-  
-  robot.LegMoveToRelatively(1, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(1, -10, -60, -50);
-
-  robot.LegMoveToRelatively(4, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(4, -10, -60, -50);
-
-  robot.LegMoveToRelatively(1, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(1, -10, -60, -50);
-
-  robot.LegMoveToRelatively(4, 10, 60, 50);
-  delay(438);
-  robot.LegMoveToRelatively(4, -10, -60, -50);
-
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  robot.TurnLeft();
-  }
- 
-  
-  robot.SleepMode();
- 
-  while (true);
-  // Custom loop code end
 }
 ```
 
