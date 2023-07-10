@@ -382,6 +382,8 @@ for (int i = 0; i <= 2; i++)
 ```
 I wrote this code in the Arduino IDE. When uploaded to the hexapod, it will detect obstacles on its path, and will find the most optimal way to avoid the obstacle. The code uses an ultrasonic sensor.
 ```c++
+
+
 #ifndef ARDUINO_AVR_MEGA2560
 #error Wrong board. Please choose "Arduino/Genuino Mega or Mega 2560"
 #endif
@@ -393,88 +395,81 @@ FNHR robot;
 
 
 
+int count, count2;
 int trigPin = 3;      // trig pin of HC-SR04
 int echoPin = 2;     // Echo pin of HC-SR04
+int TempDist;
 
-float duration, distance, distanceLeft, durationLeft, distanceRight, durationRight;
+float duration, distanceLeft, durationLeft, distanceRight, durationRight;
+float distance;
 
 void setup() {
   robot.Start();
   pinMode(trigPin, OUTPUT);         // set trig pin as output
   pinMode(echoPin, INPUT);          //set echo pin as input to capture reflected waves
+  Serial.begin(9600);
 }
 
 void loop() {
-  // Write a pulse to the HC-SR04 Trigger Pin
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);     // send waves for 10 us
-  delayMicroseconds(10);
-  duration = pulseIn(echoPin, HIGH); // receive reflected waves
-  distance = duration / 58.2;   // convert to distance
-  delay(10);
+  dist2();
+  count = 0;
+  count2 = 0;
+  //Serial.println(distance);
 
-    if (distance <= 100)
+  
+    if (distance >= 15)
   {
-    robot.CrawlBackward();
+    //Serial.println("FORWARD");
+    robot.CrawlBackward();//CRAWL FORWARD
   }
   
   else
   {
-      for (int i = 0; i <= 10; i++)
-      {
+    while(distance < 15){
+      Serial.println("LEFT");
+      robot.TurnLeft();
+      dist2();
+      count++;
+    }
+  Serial.println(count);
+    for (int i = 1; i <= count; i++){
+      robot.TurnRight();
+    }
+    while(distance < 20){
+      Serial.println("RIGHT");
+      robot.TurnRight();
+      dist2();
+      count2++;
+    }
+    
+    for (int i = 1; i <= count2; i++){
+      robot.TurnLeft();
+    }
+    if (count <= count2){
+      for (int i = 1; i <= count; i++){
         robot.TurnLeft();
       }
-      digitalWrite(trigPin, LOW);
-      delayMicroseconds(2);
-      digitalWrite(trigPin, HIGH);     // send waves for 10 us
-      delayMicroseconds(10);
-      durationLeft = pulseIn(echoPin, HIGH); // receive reflected waves
-      distanceLeft = durationLeft / 58.2;   // convert to distance
-      delay(10);
-      for (int i = 0; i <= 20; i++)
-      {
+      for (int i = 1; i <= 20; i++)
+      robot.CrawlRight();
+    }
+    else{
+      for (int i = 1; i <= count2; i++){
         robot.TurnRight();
       }
-      digitalWrite(trigPin, LOW);
-      delayMicroseconds(2);
-      digitalWrite(trigPin, HIGH);     // send waves for 10 us
-      delayMicroseconds(10);
-      durationRight = pulseIn(echoPin, HIGH); // receive reflected waves
-      distanceRight = durationRight / 58.2;   // convert to distance
-      delay(10);
-      if (distanceLeft < distanceRight)
-      {
-        for (int i = 1; i <= 7 ; i++)
-        {
-        robot.TurnLeft();
-        }
-        for (int i = 1; i <= 15; i++)
-        {
-          robot.CrawlLeft();
-        }
-        for (int i = 1; i <= 15; i++)
-        {
-          robot.CrawlBackward();
-        }
-      }
-      if (distanceRight < distanceLeft)
-      {
-        for (int i = 1; i <= 7; i++)
-        {
-        robot.TurnLeft();
-        }
-        for (int i = 1; i <= 15; i++)
-        {
-          robot.CrawlRight();
-        }
-        for (int i = 1; i <= 15; i++)
-        {
-          robot.CrawlBackward();
-        }
-      }
+      for (int i = 1; i <= 20; i++)
+      robot.CrawlLeft();
+    }
   }
 }
+    
+ void dist2(){
+   digitalWrite(trigPin, LOW);
+   delayMicroseconds(2);
+   digitalWrite(trigPin, HIGH);     // send waves for 10 us
+   delayMicroseconds(10);
+   duration = pulseIn(echoPin, HIGH); // receive reflected waves
+   distance = duration / 58.2;
+  }
 ```
    
 This code is run in the Processing IDE in C++. When run, the Processing App comes up from which you can install, calibrate, and control the hexapod. I did not write the code for the Processing App.
