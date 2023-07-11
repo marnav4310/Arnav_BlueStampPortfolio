@@ -303,80 +303,76 @@ FNHR robot;
 
 
 int count, count2;
-int trigPin = 3;      // trig pin of HC-SR04
-int echoPin = 2;     // Echo pin of HC-SR04
+int trigPin = 3;      // sets trig pin of HC-SR04
+int echoPin = 2;     // sets echo pin of HC-SR04
 int TempDist;
 
-float duration, distanceLeft, durationLeft, distanceRight, durationRight;
-float distance;
+float duration, distance, distanceLeft, durationLeft, distanceRight, durationRight; //defines all variables
 
 void setup() {
-  robot.Start();
+  robot.Start(); //starts robot
   pinMode(trigPin, OUTPUT);         // set trig pin as output
   pinMode(echoPin, INPUT);          //set echo pin as input to capture reflected waves
-  Serial.begin(9600);
+  Serial.begin(9600); //starts serial monitor
 }
 
 void loop() {
-  dist2();
+  dist2(); //initializes variables
   count = 0;
   count2 = 0;
-  //Serial.println(distance);
 
-  
-    if (distance >= 15)
+  if (distance >= 15) //if object distance is not within 15 centimeters, robot will crawl forward
   {
-    //Serial.println("FORWARD");
-    robot.CrawlBackward();//CRAWL FORWARD
+    robot.CrawlBackward(); //crawl forwards
   }
-  
-  else
+
+  else //if object distance is within 15 centimeters, robot will turn left until object distance is greater than 15 centimeters, counting how many motions it takes
   {
-    while(distance < 15){
+    while (distance < 15) {
       Serial.println("LEFT");
       robot.TurnLeft();
       dist2();
       count++;
     }
-  Serial.println(count);
-    for (int i = 1; i <= count; i++){
+    Serial.println(count); //returns back to original position based on the number of motions counted
+    for (int i = 1; i <= count; i++) {
       robot.TurnRight();
     }
-    while(distance < 20){
+    while (distance < 20) { //if object distance is within 20 centimeters (to make up for any difference caused by motor imbalance), robot will turn to the right until object distance is greater than 20 centimeters, counting how many motions it takes
       Serial.println("RIGHT");
       robot.TurnRight();
       dist2();
       count2++;
     }
-    
-    for (int i = 1; i <= count2; i++){
+
+    for (int i = 1; i <= count2; i++) { //returns back to original position based on the number of motions counted
       robot.TurnLeft();
     }
-    if (count <= count2){
-      for (int i = 1; i <= count; i++){
+    if (count <= count2) { //if count is less on left side, robot will turn left
+      for (int i = 1; i <= count; i++) {
         robot.TurnLeft();
       }
-      for (int i = 1; i <= 20; i++)
-      robot.CrawlRight();
+      for (int i = 1; i <= 20; i++) //robot crawls left 20 times, then returns to the start of the loop and crawls forward
+        robot.CrawlRight();
     }
-    else{
-      for (int i = 1; i <= count2; i++){
+    else {
+      for (int i = 1; i <= count2; i++) { //if count is less on right side, robot will turn right
         robot.TurnRight();
       }
-      for (int i = 1; i <= 20; i++)
-      robot.CrawlLeft();
+      for (int i = 1; i <= 20; i++) //robot crawls right 20 times, then returns to the start of the loop and crawls forward
+        robot.CrawlLeft();
     }
   }
 }
-    
- void dist2(){
-   digitalWrite(trigPin, LOW);
-   delayMicroseconds(2);
-   digitalWrite(trigPin, HIGH);     // send waves for 10 us
-   delayMicroseconds(10);
-   duration = pulseIn(echoPin, HIGH); // receive reflected waves
-   distance = duration / 58.2;
-  }
+
+void dist2() { //distance method to find the distance based on the time measured between the wave was sent out and received back
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);     // send waves for 10 us
+  delayMicroseconds(10);
+  duration = pulseIn(echoPin, HIGH); // receive reflected waves
+  distance = duration / 58.2;
+}
 ```
    
 This code is run in the Processing IDE in C++. When run, the Processing App comes up from which you can install, calibrate, and control the hexapod. I did not write the code for the Processing App.
