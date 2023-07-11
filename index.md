@@ -1,5 +1,5 @@
 # Hexapod
-A hexapod robot is a robot that walks on six legs, which allows it to have greater flexibility in its movement than wheel robots, like being able to walk on uneven terrain or climb up on elevation. Since the robot has so many legs, it still functions normally even if one of the legs is damaged. The hexapod can be made to do a series of motions like the Cupid Shuffle and can detect obstacles in its way using an ultrasonic sensor.
+A hexapod robot is a robot that walks on six legs, which allows it to have greater flexibility in its movement than wheel robots, like being able to walk on uneven terrain or climb up on elevation. Since the robot has so many legs, it still functions normally even if one of the legs is damaged. The hexapod can be programmed to complete a series of motions like the Cupid Shuffle Dance or to detect obstacles in its way using an ultrasonic sensor.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -7,6 +7,20 @@ A hexapod robot is a robot that walks on six legs, which allows it to have great
 
 <!--<![Headstone Image]()>
   -->
+<!-- # Modifications
+
+For my modification, I added an ultrasonic sensor to the front of the robot. With the ultrasonic sensor, I was able to program the robot so that it detects obstacles in front of it and changes its movement accordingly. The first thing I had to do was connect the ultrasonic sensor. Before doing anything, I researched how to connect the ultrasonic sensor to the circuit board, so that I didn't short-circuit the board. The ultrasonic sensor has 4 ports which are the Voltage Common Collector (VCC) pin, ground pin, trigger pin (trigPin), and echo pin. I connected all of the pins to their ports using male-to-female jumper wires. The VCC connects to the 5V port, the ground to the ground (GND) port, and the trigger and echo pins to any digital ports. 
+
+As I started coding the ultrasonic sensor, I encountered my first issue. Before, my battery sat along the board, but that covered the digital ports. Although I was still able to connect the jumper wires to those ports, the battery would bend the jumper wires and loosen their connection, which caused issues when it came to coding, as it caused me to believe that there were issues in my code, but in reality, it was the connection. Therefore, I changed the configuration of my battery so that it sat across the base of the robot, instead of along it. Also, it sat towards the back of the robot, so that it was not covering any of the ports.
+
+To code the ultrasonic sensor, the first thing I did was learn how the ultrasonic sensor works. Basically, the trigPin will send out a wave, and the echo pin will capture the reflected wave. The sensor then measures how long it takes for the wave to return in microseconds. To convert from microseconds to distance in centimeters, I had to divide by 58.2. When I first coded it, I tried to send out another wave every time I wanted an input, which caused the sensor to detect obstacles late and overall was a very faulty system.
+
+I also tried to use a PIR sensor to do the same task. While the PIR sensor seemed to be better at detecting obstacles, I wasn't able to control at what distance the robot would start turning so I decided to go back to the ultrasonic sensor. 
+
+I ended up creating a new method for distance and would implement that method every time I wanted input. I also took it slower and made sure that each part of my code worked. Since most of the code was just for, if, or while loops, I would just add a print statement right after the loop on the serial monitor to make sure that the loops were being exited. Through this method, I found out that I had an indefinite while loop, so I fixed that. I also realized that one of my variables wasn't initialized so I fixed that as well.
+
+In the end, the robot is programmed to detect obstacles from 15 centimeters away and to detect the most optimal path away from the obstacle.
+-->
 # Final Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K-nR3v7Td8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
