@@ -85,7 +85,6 @@ The Simon Says Machine can be found here: https://www.sparkfun.com/products/1054
 
 # Schematics 
 ![Headstone Image](Hexapod Schematic-1.jpg)
-![Headstone Image](Hexapod Schematic-2.jpg)
 
 # Code 
 I wrote this code in the Arduino IDE. When the code is uploaded to the hexapod, the hexapod will do the Cupid Shuffle dance, which is synced up with the actual song.
