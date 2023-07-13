@@ -33,7 +33,7 @@ The last issue I had was with soldering the jumper wires. For some reason, when 
 
 After I finished transferring all of the components, I ensured that the code still worked as it was supposed to, which it did.
 
-Overall, during my time at BlueStamp, I had a lot of fun. I made a lot of new friends that came from very different backgrounds. The instructors are very knowledgeable and are able to help with most issues, but they encourage you to try on your own first. The entire experience is very hands-on and unique compared to any other engineering program. You are also able to talk to engineers in various different fields and have experience at big companies like Apple or Google. Personally, I learned many new things, like how to solder, how to use an ultrasonic sensor and LCD display, how to code on an Arduino specifically, etc.
+Overall, during my time at BlueStamp, I had a lot of fun. I made a lot of new friends that came from very different backgrounds. The instructors are very knowledgeable and are able to help with most issues, but they encourage you to try on your own first. The entire experience is very hands-on and unique compared to any other engineering program. You are also able to talk to engineers in various different fields and have experience at big companies like Apple or Google. Personally, I also learned many new things, like how to solder, how to use an ultrasonic sensor and LCD display, how to code on an Arduino specifically, etc.
 
 # Final Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K-nR3v7Td8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
