@@ -1,5 +1,5 @@
 # Hexapod
-A hexapod robot is a robot that walks on six legs, which allows it to have greater flexibility in its movement than wheel robots, like being able to walk on uneven terrain or climb up on elevation. Since the robot has so many legs, it still functions normally even if one of the legs is damaged. The hexapod can be programmed to complete a series of motions like the Cupid Shuffle Dance or to detect obstacles in its way using an ultrasonic sensor.
+A hexapod robot is a robot that walks on six legs, which allows it to have greater flexibility in its movement than wheel robots, like being able to walk on uneven terrain or climb up on elevation. Since the robot has so many legs, it still functions normally even if one of the legs is damaged. The hexapod can be programmed to detect obstacles in its way using an ultrasonic sensor or to complete a series of motions like the Cupid Shuffle Dance.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
