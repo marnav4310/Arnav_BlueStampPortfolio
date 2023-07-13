@@ -7,9 +7,9 @@ A hexapod robot is a robot that walks on six legs, which allows it to have great
 
 <!--<![Headstone Image]()>
   -->
-<!-- # Modifications
+# Modifications
 
-For my modification, I added an ultrasonic sensor to the front of the robot. With the ultrasonic sensor, I was able to program the robot so that it detects obstacles in front of it and changes its movement accordingly. The first thing I had to do was connect the ultrasonic sensor. Before doing anything, I researched how to connect the ultrasonic sensor to the circuit board, so that I didn't short-circuit the board. The ultrasonic sensor has 4 ports which are the Voltage Common Collector (VCC) pin, ground pin, trigger pin (trigPin), and echo pin. I connected all of the pins to their ports using male-to-female jumper wires. The VCC connects to the 5V port, the ground to the ground (GND) port, and the trigger and echo pins to any digital ports. 
+For my first modification, I added an ultrasonic sensor to the front of the robot. With the ultrasonic sensor, I was able to program the robot so that it detects obstacles in front of it and changes its movement accordingly. The first thing I had to do was connect the ultrasonic sensor. Before doing anything, I researched how to connect the ultrasonic sensor to the circuit board, so that I didn't short-circuit the board. The ultrasonic sensor has 4 ports which are the Voltage Common Collector (VCC) pin, ground pin, trigger pin (trigPin), and echo pin. I connected all of the pins to their ports using male-to-female jumper wires. The VCC connects to the 5V port, the ground to the ground (GND) port, and the trigger and echo pins to any digital ports. 
 
 As I started coding the ultrasonic sensor, I encountered my first issue. Before, my battery sat along the board, but that covered the digital ports. Although I was still able to connect the jumper wires to those ports, the battery would bend the jumper wires and loosen their connection, which caused issues when it came to coding, as it caused me to believe that there were issues in my code, but in reality, it was the connection. Therefore, I changed the configuration of my battery so that it sat across the base of the robot, instead of along it. Also, it sat towards the back of the robot, so that it was not covering any of the ports.
 
@@ -19,8 +19,22 @@ I also tried to use a PIR sensor to do the same task. While the PIR sensor seeme
 
 I ended up creating a new method for distance and would implement that method every time I wanted input. I also took it slower and made sure that each part of my code worked. Since most of the code was just for, if, or while loops, I would just add a print statement right after the loop on the serial monitor to make sure that the loops were being exited. Through this method, I found out that I had an indefinite while loop, so I fixed that. I also realized that one of my variables wasn't initialized so I fixed that as well.
 
-In the end, the robot is programmed to detect obstacles from 15 centimeters away and to detect the most optimal path away from the obstacle.
--->
+In the end, the robot is programmed to detect obstacles from 20 centimeters away and to detect the most optimal path away from the obstacle. 
+
+For my next modification, I decided to add an LCD display that displays the distance of the obstacle. The first thing I did, was solder pin headers to the display, so I can just plug in the display to the breadboard. Once I did that, I started the wiring between, the breadboard and circuit board. Most pins were either connected to ground, 5V, or a digital Arduino pin. Once I ensured that the display would turn on, I tested some basic code to print on the display screen. 
+
+One issue I had with the display was the brightness of the display itself. Initially, I didn't use any resistors, but the display was very hard to read, so I ended up adding two 1000 ohm resistors in series of the 3rd pin of the LCD display.
+
+Once I ensured that was working, I weaved the LCD display code into the ultrasonic sensor code. Since the code for the ultrasonic sensor already calculated the distance and stored it in a variable, all I had to do was print the variable, which worked perfectly. 
+
+Once I was sure that the ultrasonic sensor and LCD display worked together properly, I started moving all of the components to a solderable breadboard so that it would look cleaner than a normal breadboard, and the connections would be permanent and secure. 
+
+The last issue I had was with soldering the jumper wires. For some reason, when soldering the jumper wires, I would accidentally bridge two pin holes with solder on accident. I didn't have an issue with the resistors or the soldering of the LCD display onto the breadboard.
+
+After I finished transferring all of the components, I ensured that the code still worked as it was supposed to, which it did.
+
+Overall, during my time at BlueStamp, I had a lot of fun. I made a lot of new friends that came from very different backgrounds. The instructors are very knowledgeable and are able to help with most issues, but they encourage you to try on your own first. The entire experience is very hands-on and unique compared to any other engineering program. You are also able to talk to engineers in various different fields and have experience at big companies like Apple or Google. Personally, I learned many new things, like how to solder, how to use an ultrasonic sensor and LCD display, how to code on an Arduino specifically, etc.
+
 # Final Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K-nR3v7Td8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -87,6 +101,108 @@ The Simon Says Machine can be found here: https://www.sparkfun.com/products/1054
 ![Headstone Image](Hexapod Schematic-1.jpg)
 
 # Code 
+I wrote this code in the Arduino IDE. When uploaded to the hexapod, it will detect obstacles on its path and will find the most optimal way to avoid the obstacle. It will also display the distance from the obstacle on the LCD display attached to the robot. The code uses an ultrasonic sensor and an LCD display.
+```c++
+#include <LiquidCrystal.h>
+
+// LCD pins <--> Arduino pins
+const int RS = 15, EN = 14, D4 = A1, D5 = A0, D6 = 21, D7 = 20;
+LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
+
+
+#ifndef ARDUINO_AVR_MEGA2560
+#error Wrong board. Please choose "Arduino/Genuino Mega or Mega 2560"
+#endif
+
+// Include FNHR (Freenove Hexapod Robot) library
+#include <FNHR.h>
+
+FNHR robot;
+
+
+
+int count, count2;
+int trigPin = 3;      // sets trig pin of HC-SR04
+int echoPin = 2;     // sets echo pin of HC-SR04
+int TempDist;
+
+float duration, distance, distanceLeft, durationLeft, distanceRight, durationRight; //defines all variables
+
+void setup() {
+  lcd.begin(16, 2); // set up number of columns and rows
+  robot.Start(); //starts robot
+  pinMode(trigPin, OUTPUT);         // set trig pin as output
+  pinMode(echoPin, INPUT);          //set echo pin as input to capture reflected waves
+  Serial.begin(9600); //starts serial monitor
+}
+
+void loop() {
+  dist2(); //initializes variables
+  count = 0;
+  count2 = 0;
+
+  if (distance >= 15) //if object distance is not within 15 centimeters, robot will crawl forward
+  {
+    robot.CrawlBackward(); //crawl forwards
+  }
+
+  else //if object distance is within 15 centimeters, robot will turn left until object distance is greater than 15 centimeters, counting how many motions it takes
+  {
+    while (distance < 15) {
+      lcd.setCursor(0, 0);                       // move cursor to   (0, 0)
+      lcd.print("Distance: ");        // print message at (0, 0)
+      lcd.setCursor(0, 1);
+      lcd.print(distance);
+      Serial.println("LEFT");
+      robot.TurnLeft();
+      dist2();
+      count++;
+    }
+    Serial.println(count); //returns back to original position based on the number of motions counted
+    for (int i = 1; i <= count; i++) {
+      robot.TurnRight();
+    }
+    while (distance < 20) { //if object distance is within 20 centimeters (to make up for any difference caused by motor imbalance), robot will turn to the right until object distance is greater than 20 centimeters, counting how many motions it takes
+      lcd.setCursor(0, 0);                       // move cursor to   (0, 0)
+      lcd.print("Distance: ");        // print message at (0, 0)
+      lcd.setCursor(0, 1);
+      lcd.print(distance);
+      Serial.println("RIGHT");
+      robot.TurnRight();
+      dist2();
+      count2++;
+    }
+
+    for (int i = 1; i <= count2; i++) { //returns back to original position based on the number of motions counted
+      robot.TurnLeft();
+    }
+    if (count <= count2) { //if count is less on left side, robot will turn left
+      for (int i = 1; i <= count; i++) {
+        robot.TurnLeft();
+      }
+      for (int i = 1; i <= 20; i++) //robot crawls left 20 times, then returns to the start of the loop and crawls forward
+        robot.CrawlRight();
+    }
+    else {
+      for (int i = 1; i <= count2; i++) { //if count is less on right side, robot will turn right
+        robot.TurnRight();
+      }
+      for (int i = 1; i <= 20; i++) //robot crawls right 20 times, then returns to the start of the loop and crawls forward
+        robot.CrawlLeft();
+    }
+  }
+}
+
+void dist2() { //distance method to find the distance based on the time measured between the wave was sent out and received back
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);     // send waves for 10 us
+  delayMicroseconds(10);
+  duration = pulseIn(echoPin, HIGH); // receive reflected waves
+  distance = duration / 58.2;
+}
+```
+
 I wrote this code in the Arduino IDE. When the code is uploaded to the hexapod, the hexapod will do the Cupid Shuffle dance, which is synced up with the actual song.
 
 ```c++
@@ -300,91 +416,6 @@ void loop() {
 
   while (true);
   // Custom loop code end
-}
-```
-I wrote this code in the Arduino IDE. When uploaded to the hexapod, it will detect obstacles on its path and will find the most optimal way to avoid the obstacle. The code uses an ultrasonic sensor.
-```c++
-#ifndef ARDUINO_AVR_MEGA2560
-#error Wrong board. Please choose "Arduino/Genuino Mega or Mega 2560"
-#endif
-
-// Include FNHR (Freenove Hexapod Robot) library
-#include <FNHR.h>
-
-FNHR robot;
-
-
-
-int count, count2;
-int trigPin = 3;      // sets trig pin of HC-SR04
-int echoPin = 2;     // sets echo pin of HC-SR04
-int TempDist;
-
-float duration, distance, distanceLeft, durationLeft, distanceRight, durationRight; //defines all variables
-
-void setup() {
-  robot.Start(); //starts robot
-  pinMode(trigPin, OUTPUT);         // set trig pin as output
-  pinMode(echoPin, INPUT);          //set echo pin as input to capture reflected waves
-  Serial.begin(9600); //starts serial monitor
-}
-
-void loop() {
-  dist2(); //initializes variables
-  count = 0;
-  count2 = 0;
-
-  if (distance >= 15) //if object distance is not within 15 centimeters, robot will crawl forward
-  {
-    robot.CrawlBackward(); //crawl forwards
-  }
-
-  else //if object distance is within 15 centimeters, robot will turn left until object distance is greater than 15 centimeters, counting how many motions it takes
-  {
-    while (distance < 15) {
-      Serial.println("LEFT");
-      robot.TurnLeft();
-      dist2();
-      count++;
-    }
-    Serial.println(count); //returns back to original position based on the number of motions counted
-    for (int i = 1; i <= count; i++) {
-      robot.TurnRight();
-    }
-    while (distance < 20) { //if object distance is within 20 centimeters (to make up for any difference caused by motor imbalance), robot will turn to the right until object distance is greater than 20 centimeters, counting how many motions it takes
-      Serial.println("RIGHT");
-      robot.TurnRight();
-      dist2();
-      count2++;
-    }
-
-    for (int i = 1; i <= count2; i++) { //returns back to original position based on the number of motions counted
-      robot.TurnLeft();
-    }
-    if (count <= count2) { //if count is less on left side, robot will turn left
-      for (int i = 1; i <= count; i++) {
-        robot.TurnLeft();
-      }
-      for (int i = 1; i <= 20; i++) //robot crawls left 20 times, then returns to the start of the loop and crawls forward
-        robot.CrawlRight();
-    }
-    else {
-      for (int i = 1; i <= count2; i++) { //if count is less on right side, robot will turn right
-        robot.TurnRight();
-      }
-      for (int i = 1; i <= 20; i++) //robot crawls right 20 times, then returns to the start of the loop and crawls forward
-        robot.CrawlLeft();
-    }
-  }
-}
-
-void dist2() { //distance method to find the distance based on the time measured between the wave was sent out and received back
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);     // send waves for 10 us
-  delayMicroseconds(10);
-  duration = pulseIn(echoPin, HIGH); // receive reflected waves
-  distance = duration / 58.2;
 }
 ```
    
