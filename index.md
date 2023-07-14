@@ -8,6 +8,7 @@ A hexapod robot is a robot that walks on six legs, which allows it to have great
 <!--<![Headstone Image]()>
   -->
 # Modifications
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ni_j-o_GJSA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 For my first modification, I added an ultrasonic sensor to the front of the robot. With the ultrasonic sensor, I was able to program the robot so that it detects obstacles in front of it and changes its movement accordingly. The first thing I had to do was connect the ultrasonic sensor. Before doing anything, I researched how to connect the ultrasonic sensor to the circuit board, so that I didn't short-circuit the board. The ultrasonic sensor has 4 ports which are the Voltage Common Collector (VCC) pin, ground pin, trigger pin (trigPin), and echo pin. I connected all of the pins to their ports using male-to-female jumper wires. The VCC connects to the 5V port, the ground to the ground (GND) port, and the trigger and echo pins to any digital ports. 
 
