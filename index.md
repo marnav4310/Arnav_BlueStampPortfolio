@@ -1231,8 +1231,8 @@ public void processEvent(int id) {
 ```
 
 # Other Resources/Examples
-[Freenove Hexapod Robot GitHub Repository](https://github.com/Freenove/Freenove_Hexapod_Robot_Kit)
-[Sparkfun Simon Says Machine](https://www.sparkfun.com/products/10547)
+1. [Freenove Hexapod Robot GitHub Repository](https://github.com/Freenove/Freenove_Hexapod_Robot_Kit)
+2. [Sparkfun Simon Says Machine](https://www.sparkfun.com/products/10547)
 
 # Bill of Materials
 
