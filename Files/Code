@@ -1,4 +1,104 @@
+I wrote this code in the Arduino IDE. When uploaded to the hexapod, it will detect obstacles on its path and will find the most optimal way to avoid the obstacle. It will also display the distance from the obstacle on the LCD display attached to the robot. The code uses an ultrasonic sensor and an LCD display.
+```c++
+#include <LiquidCrystal.h>
 
+// LCD pins <--> Arduino pins
+const int RS = 15, EN = 14, D4 = A1, D5 = A0, D6 = 21, D7 = 20;
+LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
+
+
+#ifndef ARDUINO_AVR_MEGA2560
+#error Wrong board. Please choose "Arduino/Genuino Mega or Mega 2560"
+#endif
+
+// Include FNHR (Freenove Hexapod Robot) library
+#include <FNHR.h>
+
+FNHR robot;
+
+
+
+int count, count2;
+int trigPin = 3;      // sets trig pin of HC-SR04
+int echoPin = 2;     // sets echo pin of HC-SR04
+int TempDist;
+
+float duration, distance, distanceLeft, durationLeft, distanceRight, durationRight; //defines all variables
+
+void setup() {
+  lcd.begin(16, 2); // set up number of columns and rows
+  robot.Start(); //starts robot
+  pinMode(trigPin, OUTPUT);         // set trig pin as output
+  pinMode(echoPin, INPUT);          //set echo pin as input to capture reflected waves
+  Serial.begin(9600); //starts serial monitor
+}
+
+void loop() {
+  dist2(); //initializes variables
+  count = 0;
+  count2 = 0;
+
+  if (distance >= 15) //if object distance is not within 15 centimeters, robot will crawl forward
+  {
+    robot.CrawlBackward(); //crawl forwards
+  }
+
+  else //if object distance is within 15 centimeters, robot will turn left until object distance is greater than 15 centimeters, counting how many motions it takes
+  {
+    while (distance < 15) {
+      lcd.setCursor(0, 0);                       // move cursor to   (0, 0)
+      lcd.print("Distance: ");        // print message at (0, 0)
+      lcd.setCursor(0, 1);
+      lcd.print(distance);
+      Serial.println("LEFT");
+      robot.TurnLeft();
+      dist2();
+      count++;
+    }
+    Serial.println(count); //returns back to original position based on the number of motions counted
+    for (int i = 1; i <= count; i++) {
+      robot.TurnRight();
+    }
+    while (distance < 20) { //if object distance is within 20 centimeters (to make up for any difference caused by motor imbalance), robot will turn to the right until object distance is greater than 20 centimeters, counting how many motions it takes
+      lcd.setCursor(0, 0);                       // move cursor to   (0, 0)
+      lcd.print("Distance: ");        // print message at (0, 0)
+      lcd.setCursor(0, 1);
+      lcd.print(distance);
+      Serial.println("RIGHT");
+      robot.TurnRight();
+      dist2();
+      count2++;
+    }
+
+    for (int i = 1; i <= count2; i++) { //returns back to original position based on the number of motions counted
+      robot.TurnLeft();
+    }
+    if (count <= count2) { //if count is less on left side, robot will turn left
+      for (int i = 1; i <= count; i++) {
+        robot.TurnLeft();
+      }
+      for (int i = 1; i <= 20; i++) //robot crawls left 20 times, then returns to the start of the loop and crawls forward
+        robot.CrawlRight();
+    }
+    else {
+      for (int i = 1; i <= count2; i++) { //if count is less on right side, robot will turn right
+        robot.TurnRight();
+      }
+      for (int i = 1; i <= 20; i++) //robot crawls right 20 times, then returns to the start of the loop and crawls forward
+        robot.CrawlLeft();
+    }
+  }
+}
+
+void dist2() { //distance method to find the distance based on the time measured between the wave was sent out and received back
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);     // send waves for 10 us
+  delayMicroseconds(10);
+  duration = pulseIn(echoPin, HIGH); // receive reflected waves
+  distance = duration / 58.2;
+}
+```
 
 I wrote this code in the Arduino IDE. When the code is uploaded to the hexapod, the hexapod will do the Cupid Shuffle dance, which is synced up with the actual song.
 
