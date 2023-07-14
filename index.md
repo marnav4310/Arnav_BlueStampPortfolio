@@ -98,7 +98,7 @@ The Simon Says Machine can be found [here](https://www.sparkfun.com/products/105
 ![Headstone Image](Simon Says Project.jpg)
 
 # Schematics 
-![Headstone Image](Hexapod Schematic.pdf)
+![Headstone Image](Hexapod Robot Schematic.jpg)
 
 # Code 
 I wrote this code in the Arduino IDE. When uploaded to the hexapod, it will detect obstacles on its path and will find the most optimal way to avoid the obstacle. It will also display the distance from the obstacle on the LCD display attached to the robot. The code uses an ultrasonic sensor and an LCD display.
