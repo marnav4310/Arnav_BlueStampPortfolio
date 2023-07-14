@@ -1229,6 +1229,11 @@ public void processEvent(int id) {
 }
 ```
 
+<!--# Other Resources/Examples
+[Freenove Hexapod Robot GitHub Repository](https://github.com/Freenove/Freenove_Hexapod_Robot_Kit)
+[Sparkfun Simon Says Machine](https://www.sparkfun.com/products/10547)
+-->
+
 # Bill of Materials
 
 | **Part** | **Description** | **Price** | **Link** |
@@ -1240,11 +1245,3 @@ public void processEvent(int id) {
 | Tamiya Connectors | To connect the battery to the circuit board | $12.99 | <a href="https://www.amazon.com/JFtech-Connector-Silicone-Controller-Battery/dp/B07MKXPY8M"> Link </a> 
 | NiMH Battery Charger | To charge the battery | $14.99 | <a href="https://www.amazon.com/Charger-Battery-Standard-Connector-Charging/dp/B089218ZW9/ref=asc_df_B089218ZW9/?tag=hyprod-20&linkCode=df0&hvadid=459723993320&hvpos=&hvnetw=g&hvrand=14357015709352416414&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-950581374399&psc=1"> Link </a> 
 
-<!--# Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
-
-To watch the BSE tutorial on how to create a portfolio, click here.
--->
