@@ -103,7 +103,7 @@ The Simon Says Machine can be found [here](https://www.sparkfun.com/products/105
 
 # Code 
 I wrote this code in the Arduino IDE. When uploaded to the hexapod, it will detect obstacles on its path and will find the most optimal way to avoid the obstacle. It will also display the distance from the obstacle on the LCD display attached to the robot. The code uses an ultrasonic sensor and an LCD display.
-<pre style = "wraparound:fdfdfdj border:none; height:40pc">
+<pre style="wraparound:#fdfdfd; border:none; height:40pc">
 ```c++
 #include <LiquidCrystal.h>
 
