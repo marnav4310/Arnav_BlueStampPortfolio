@@ -424,6 +424,7 @@ void loop() {
 <\pre>
 
 This code is run in the Processing IDE in C++. When run, the Processing App comes up from which you can install, calibrate, and control the hexapod. I did not write the code for the Processing App.
+<pre style = "wraparound:FdFdFdj border:none; height:40 pc">  
 ```c++
 // control robot
 ControlRobot controlRobot = new ControlRobot(this);
@@ -1232,6 +1233,7 @@ public void processEvent(int id) {
   }
 }
 ```
+<\pre>
 
 # Other Resources/Examples
 1. [Freenove Hexapod Robot GitHub Repository](https://github.com/Freenove/Freenove_Hexapod_Robot_Kit)
