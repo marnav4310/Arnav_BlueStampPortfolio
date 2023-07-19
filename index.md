@@ -103,7 +103,6 @@ The Simon Says Machine can be found [here](https://www.sparkfun.com/products/105
 
 # Code 
 I wrote this code in the Arduino IDE. When uploaded to the hexapod, it will detect obstacles on its path and will find the most optimal way to avoid the obstacle. It will also display the distance from the obstacle on the LCD display attached to the robot. The code uses an ultrasonic sensor and an LCD display.
-<pre style="wraparound:#fdfdfd; border:none; height:40pc">
 ```c++
 #include <LiquidCrystal.h>
 
@@ -204,7 +203,6 @@ void dist2() { //distance method to find the distance based on the time measured
   distance = duration / 58.2;
 }
 ```
-</pre>
         
 I wrote this code in the Arduino IDE. When the code is uploaded to the hexapod, the hexapod will do the Cupid Shuffle dance, which is synced up with the actual song.
 ```c++
