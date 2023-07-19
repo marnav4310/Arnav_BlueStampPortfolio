@@ -207,7 +207,6 @@ void dist2() { //distance method to find the distance based on the time measured
 </pre>
         
 I wrote this code in the Arduino IDE. When the code is uploaded to the hexapod, the hexapod will do the Cupid Shuffle dance, which is synced up with the actual song.
-<pre style="wraparound:#fdfdfd; border:none; height:40pc">
 ```c++
 #ifndef ARDUINO_AVR_MEGA2560
 #error Wrong board. Please choose "Arduino/Genuino Mega or Mega 2560"
@@ -421,10 +420,8 @@ void loop() {
   // Custom loop code end
 }
 ```
-</pre>
 
 This code is run in the Processing IDE in C++. When run, the Processing App comes up from which you can install, calibrate, and control the hexapod. I did not write the code for the Processing App.
-<pre style="wraparound:#fdfdfd; border:none; height:40pc">
 ```c++
 // control robot
 ControlRobot controlRobot = new ControlRobot(this);
@@ -1233,8 +1230,6 @@ public void processEvent(int id) {
   }
 }
 ```
-</pre>
-
 # Other Resources/Examples
 1. [Freenove Hexapod Robot GitHub Repository](https://github.com/Freenove/Freenove_Hexapod_Robot_Kit)
 2. [Sparkfun Simon Says Machine](https://www.sparkfun.com/products/10547)
