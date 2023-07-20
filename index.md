@@ -98,6 +98,7 @@ The Simon Says Machine can be found [here](https://www.sparkfun.com/products/105
 ![Headstone Image](Simon Says Project.jpg)
 
 # Schematics 
+The schematic details the components used to make Freenove's Arduino Mega 2560 for this robot.
 ![Headstone Image](Hexapod Robot Schematic.jpg)
 
 # Code 
